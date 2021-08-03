@@ -243,6 +243,8 @@ This section configures packages with =use-package=.
 
 ** LSP
 
+Note that for documentation support, you will have to ~nix-shell -p rustup pandoc~ and execute ~rustup toolchain install nightly~, then launch emacs /within that shell/.
+
 #+begin_src emacs-lisp :tangle "init.el"
     (use-package lsp-mode
       :diminish
@@ -280,6 +282,10 @@ This section configures packages with =use-package=.
     :diminish flycheck-mode)
   
   (use-package rustic
+    :custom
+    (lsp-rust-analyzer-server-display-inlay-hints 't)
+    :init
+    (rustic-doc-setup)
     :bind (:map rustic-mode-map
                 ("M-j" . lsp-ui-imenu)
                 ("M-?" . lsp-find-references)
