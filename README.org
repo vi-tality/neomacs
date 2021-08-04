@@ -284,8 +284,6 @@ Note that for documentation support, you will have to ~nix-shell -p rustup pando
   (use-package rustic
     :custom
     (lsp-rust-analyzer-server-display-inlay-hints 't)
-    :init
-    (rustic-doc-setup)
     :bind (:map rustic-mode-map
                 ("M-j" . lsp-ui-imenu)
                 ("M-?" . lsp-find-references)
