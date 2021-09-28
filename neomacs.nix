@@ -14,5 +14,14 @@ in
       enable = true;
       doomPrivateDir = ./config;
     };
+
+    services.emacs.enable = true;
+
+    home.packages = with pkgs; [
+      rust-analyzer
+      ripgrep
+      sqlite
+      wordnet
+    ];
   };
 }

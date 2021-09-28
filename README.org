@@ -3,3 +3,15 @@
 [[https://builtwithnix.org/badge.svg]]
 
 A [[https://www.urbandictionary.com/define.php?term=Pretty%20Good][pretty good]] Emacs distribution, packaged as a Nix Flake.
+
+* TODO
+
+ * Spell checking
+ * Grammar checking
+ * Folding
+ * Folding
+ * Multiple cursors
+ * Word wrap
+ * Dired ranger (?)
+ * TTY
+ *
