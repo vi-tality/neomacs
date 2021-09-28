@@ -7,21 +7,17 @@
   };
 
   outputs = { nixpkgs, flake-utils, ... }@inputs: let
-    inherit (flake-utils.lib) eachDefaultSystem eachSystem;
+    inherit (flake-utils.lib) eachSystem;
   in
-    eachDefaultSystem
-      (
-        system:
-          let
-            pkgs = import nixpkgs { inherit system; };
-          in
-            {
-              devShell = pkgs.mkShell { buildInputs = with pkgs; [ nixpkgs-fmt ]; };
-            }
-      ) // eachSystem [ "x86_64-linux" ]
-      (
-        system: { }
-      ) // {
-      hmModule = import ./modules/home-manager.nix;
+    eachSystem [ "x86_64-linux" ] (
+      system:
+        let
+          pkgs = import nixpkgs { inherit system; };
+        in
+          {
+            devShell = pkgs.mkShell { buildInputs = with pkgs; [ nixpkgs-fmt ]; };
+          }
+    ) // {
+      hmModule = import ./neomacs.nix;
     };
 }

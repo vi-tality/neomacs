@@ -1,0 +1,4 @@
+(
+ doom! :lang
+       ;; javascript
+)
