@@ -6,12 +6,5 @@ A [[https://www.urbandictionary.com/define.php?term=Pretty%20Good][pretty good]]
 
 * TODO
 
- * Spell checking
- * Grammar checking
- * Folding
- * Folding
  * Multiple cursors
- * Word wrap
- * Dired ranger (?)
  * TTY
- *
